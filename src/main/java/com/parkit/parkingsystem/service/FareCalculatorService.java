@@ -8,6 +8,7 @@ import com.parkit.parkingsystem.model.Ticket;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class FareCalculatorService {
 
@@ -72,8 +73,8 @@ public class FareCalculatorService {
             //System.out.println("boucle fini");
             dataBaseConfig.closeResultSet(rs);
             dataBaseConfig.closePreparedStatement(ps);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException | ClassNotFoundException e) {
+            System.err.println("Erreur de conexion avec la base de donnée.");
         } finally {
             dataBaseConfig.closeConnection(con);
         }
