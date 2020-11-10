@@ -95,6 +95,7 @@ public class TicketDAO {
             while ((rs.next()) && !(isGood)) {
                 if ((registration.equals(rs.getString("VEHICLE_REG_NUMBER"))) && ((rs.getDate("OUT_TIME") != null ))){
                     isGood = true;
+                    System.out.println("Welcome back! As a recurring user of our parking lot, you'll benefit from a 5% discount.");
                 }
             }
             dataBaseConfig.closeResultSet(rs);
