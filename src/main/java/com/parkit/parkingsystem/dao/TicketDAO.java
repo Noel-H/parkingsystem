@@ -90,6 +90,7 @@ public class TicketDAO {
         try {
             con = dataBaseConfig.getConnection();
             PreparedStatement ps = con.prepareStatement(DBConstants.GET_REG);
+            ps.setString(1,registration);
             ResultSet rs = ps.executeQuery();
             while ((rs.next()) && !(isGood)) {
                 if ((registration.equals(rs.getString("VEHICLE_REG_NUMBER"))) && ((rs.getDate("OUT_TIME") != null ))){
