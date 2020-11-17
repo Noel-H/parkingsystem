@@ -59,11 +59,11 @@ public class Ticket {
         this.outTime = outTime;
     }
 
-    public void setAlreadyCame(boolean alreadyCame){
+    public void setAlreadyCame(boolean alreadyCame) {
         this.alreadyCame = alreadyCame;
     }
 
-    public boolean getAlreadyCame(){
+    public boolean getAlreadyCame() {
         return alreadyCame;
     }
 }
